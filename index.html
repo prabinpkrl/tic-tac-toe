@@ -1,36 +1,31 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping list example</title>
-    <script src="index.js" defer></script>
-    <style>
-      li {
-        margin-bottom: 10px;
-      }
-
-      li button {
-        font-size: 8px;
-        margin-left: 20px;
-        color: #666;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic tac toe</title>
   </head>
   <body>
-
-    <h1>My shopping list</h1>
-
-    <div>
-      <label for="item">Enter a new item:</label>
-      <input type="text" name="item" id="item">
-      <button>Add item</button>
+    <div class="gamecontainer">
+      <h1>Tic tac toe Game</h1>
+      <div class="playerturn"></div>
+      <div class="cellcontainer">
+        <button type="button" class="cell"></button>
+        <button type="button" class="cell"></button>
+        <button type="button" class="cell"></button>
+        <button type="button" class="cell"></button>
+        <button type="button" class="cell"></button>
+        <button type="button" class="cell"></button>
+        <button type="button" class="cell"></button>
+        <button type="button" class="cell"></button>
+        <button type="button" class="cell"></button>
+      </div>
+      <div class="msg"></div>
+      <div class="resetbtn">
+        <button type="reset" class="reset" >Reset</button>
+      </div>      
     </div>
-
-    <ul>
-
-    </ul>
-
-    
+    <script src="index.js"></script>
   </body>
 </html>
