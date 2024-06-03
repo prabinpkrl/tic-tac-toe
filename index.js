@@ -25,11 +25,9 @@ cells.forEach((cell) => {
     cell.disabled = true;
     count++;
     
-    checkWinner();
-    console.log(checkWinner());//undefined..how??
+    let isWin=checkWinner();
     
-
-    if(!checkWinner() && count === 9){
+    if(!isWin && count === 9){
       drawGame();
     }
   });
@@ -52,6 +50,8 @@ function checkWinner() {
     [0, 4, 8],
     [2, 4, 6]
   ];
+
+  hasWin = false;
   winPatterns.forEach((pattern) => {
 
     let position1 = cells[pattern[0]].innerHTML;
@@ -61,12 +61,14 @@ function checkWinner() {
     if (position1 != '' && position2 != '' && position3 != '') {
       if (position1 === position2 && position2 === position3) {
         showWinMsg(position1);
-        return true;
+        hasWin= true;
+        return;
         
       }
     }
 
   });
+  return hasWin;
 }
 
 function showWinMsg(winner) {
