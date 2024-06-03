@@ -25,9 +25,9 @@ cells.forEach((cell) => {
     cell.disabled = true;
     count++;
     
-    let isWin=checkWinner();
-    
+    let isWin = checkWinner();
     if(!isWin && count === 9){
+      console.log(isWin)//didnot enter in this block
       drawGame();
     }
   });
