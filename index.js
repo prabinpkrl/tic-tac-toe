@@ -26,6 +26,7 @@ cells.forEach((cell) => {
     count++;
     
     let isWin = checkWinner();
+    checkWinner();
     if(!isWin && count === 9){
       console.log(isWin)//didnot enter in this block
       drawGame();
@@ -79,8 +80,9 @@ function showWinMsg(winner) {
   });
 }
 
-function resetBTn() {
+function resetBtn() {
   turnX = true;
+  count = 0;
   playerTurn.innerHTML = "Player X's Turn";
   cells.forEach((cell) => {
     cell.textContent = "";
@@ -90,6 +92,6 @@ function resetBTn() {
 
   });
 }
-reset.addEventListener('click', resetBTn);
+reset.addEventListener('click', resetBtn);
 
 
