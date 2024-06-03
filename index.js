@@ -21,20 +21,24 @@ cells.forEach((cell) => {
       cell.innerHTML = "O";
       turnX = true;
     }
+
     cell.disabled = true;
     count++;
-    let isWin = checkWinner();
+    
+    checkWinner();
+    console.log(checkWinner());//undefined..how??
+    
 
-    if (count === 9 && !isWin) {
+    if(!checkWinner() && count === 9){
       drawGame();
     }
   });
 });
 
 function drawGame() {
-  playerTurn.innerHTML = "Play Again-";
+  playerTurn.innerHTML = "Play Again!";
   msg.innerHTML = "It's Draw Try Again";
-  cell.disabled = true;
+  cells.disabled = true;
 }
 
 function checkWinner() {
@@ -58,6 +62,7 @@ function checkWinner() {
       if (position1 === position2 && position2 === position3) {
         showWinMsg(position1);
         return true;
+        
       }
     }
 
@@ -74,6 +79,7 @@ function showWinMsg(winner) {
 
 function resetBTn() {
   turnX = true;
+  playerTurn.innerHTML = "Player X's Turn";
   cells.forEach((cell) => {
     cell.textContent = "";
     msg.innerHTML = '';
