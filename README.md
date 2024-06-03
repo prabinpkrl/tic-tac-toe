@@ -5,7 +5,6 @@ hey if you reading this..i can't solve this problem in this<br>
 when cell is filled then its draw but when last input is filled and somebody won then it also show draw.<br>
 i did this  <br>
     checkWinner();
-
     if(!checkWinner() && count === 9){
       drawGame();
     } 
