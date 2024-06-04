@@ -24,11 +24,14 @@ cells.forEach((cell) => {
 
     cell.disabled = true;
     count++;
-    
     let isWin = checkWinner();
-    checkWinner();
-    if(!isWin && count === 9){
-      console.log(isWin)//didnot enter in this block
+
+    if (count === 5) {
+      checkWinner();
+    }
+
+    if (!isWin && count === 9) {
+      console.log(isWin)
       drawGame();
     }
   });
@@ -62,9 +65,9 @@ function checkWinner() {
     if (position1 != '' && position2 != '' && position3 != '') {
       if (position1 === position2 && position2 === position3) {
         showWinMsg(position1);
-        hasWin= true;
+        hasWin = true;
         return;
-        
+
       }
     }
 
